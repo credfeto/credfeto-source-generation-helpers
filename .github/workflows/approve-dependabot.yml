@@ -68,7 +68,7 @@ jobs:
             core.info(`Owner: ${context.repo.owner}`);
 
       - name: "Checkout Source"
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
         with:
           clean: true
           fetch-depth: 1
@@ -114,7 +114,7 @@ jobs:
             core.info(`Owner: ${context.repo.owner}`);
 
       - name: "Checkout Source"
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
         with:
           clean: true
           fetch-depth: 1
@@ -158,7 +158,7 @@ jobs:
             core.info(`Owner: ${context.repo.owner}`);
 
       - name: "Checkout Source"
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
         with:
           clean: true
           fetch-depth: 1
@@ -201,7 +201,7 @@ jobs:
             core.info(`Owner: ${context.repo.owner}`);
 
       - name: "Checkout Source"
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
         with:
           clean: true
           fetch-depth: 1
