@@ -14,6 +14,7 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 ### Fixed
 ### Changed
 - die() must output to stderr so error messages are not swallowed by stdout pipelines
+- Replaced third-party actions alexwilson/enable-github-automerge-action and hmarr/auto-approve-action with local composite actions
 ### Deprecated
 ### Removed
 ### Deployment Changes
