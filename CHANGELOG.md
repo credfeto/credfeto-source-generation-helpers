@@ -13,12 +13,15 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 ### Added
 ### Fixed
 ### Changed
-- die() must output to stderr so error messages are not swallowed by stdout pipelines
-- SDK - Updated DotNet SDK to 10.0.301
 ### Deprecated
 ### Removed
 ### Deployment Changes
 <!--
 Releases that have at least been deployed to staging, BUT NOT necessarily released to live.  Changes should be moved from [Unreleased] into here as they are merged into the appropriate release branch
 -->
+## [0.0.1] - 2026-06-11
+### Changed
+- die() must output to stderr so error messages are not swallowed by stdout pipelines
+- SDK - Updated DotNet SDK to 10.0.301
+
 ## [0.0.0] - Project created
