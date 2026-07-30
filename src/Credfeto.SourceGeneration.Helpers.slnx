@@ -5,4 +5,6 @@
     <File Path="CodeAnalysis.ruleset" />
     <File Path="global.json" />
   </Folder>
+  <Project Path="Credfeto.SourceGeneration.Helpers/Credfeto.SourceGeneration.Helpers.csproj" />
+  <Project Path="Credfeto.SourceGeneration.Helpers.Tests/Credfeto.SourceGeneration.Helpers.Tests.csproj" />
 </Solution>
