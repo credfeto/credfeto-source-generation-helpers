@@ -9,10 +9,29 @@ namespace Credfeto.SourceGeneration.Helpers.Tests;
 
 internal static class CompilationHelpers
 {
+    private static readonly Lazy<IReadOnlyList<MetadataReference>> BaseReferences = new(BuildBaseReferences);
+
     public static CSharpCompilation CreateCompilation(
         string source,
         IEnumerable<MetadataReference>? additionalReferences = null
     )
+    {
+        List<MetadataReference> references = [.. BaseReferences.Value];
+
+        if (additionalReferences is not null)
+        {
+            references.AddRange(additionalReferences);
+        }
+
+        return CSharpCompilation.Create(
+            assemblyName: "TestAssembly",
+            syntaxTrees: [CSharpSyntaxTree.ParseText(source, cancellationToken: TestContext.Current.CancellationToken)],
+            references: references,
+            options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary)
+        );
+    }
+
+    private static IReadOnlyList<MetadataReference> BuildBaseReferences()
     {
         HashSet<string> addedPaths = new(StringComparer.OrdinalIgnoreCase);
         List<MetadataReference> references = [];
@@ -37,17 +56,7 @@ internal static class CompilationHelpers
             }
         }
 
-        if (additionalReferences is not null)
-        {
-            references.AddRange(additionalReferences);
-        }
-
-        return CSharpCompilation.Create(
-            assemblyName: "TestAssembly",
-            syntaxTrees: [CSharpSyntaxTree.ParseText(source, cancellationToken: TestContext.Current.CancellationToken)],
-            references: references,
-            options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary)
-        );
+        return references;
     }
 
     private static void AddReference(List<MetadataReference> references, HashSet<string> addedPaths, Type type)

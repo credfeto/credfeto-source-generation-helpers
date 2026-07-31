@@ -17,27 +17,18 @@ public static class SymbolExtensions
 
     public static bool IsObsoleteAttribute(this AttributeData attributeData)
     {
-        return IsObsoleteAttribute(attributeData.AttributeClass ?? InvalidAttributeClass());
-    }
-
-    private static INamedTypeSymbol InvalidAttributeClass()
-    {
-        throw new InvalidOperationException("AttributeClass is null");
-    }
-
-    private static bool IsObsoleteAttribute(INamedTypeSymbol symbol)
-    {
-        return MatchesType(type: ObsoleteType, symbol: symbol);
+        return MatchesType(
+            type: ObsoleteType,
+            symbol: attributeData.AttributeClass ?? throw new InvalidOperationException("AttributeClass is null")
+        );
     }
 
     public static bool IsDescriptionAttribute(this AttributeData attributeData)
     {
-        return IsDescriptionAttribute(attributeData.AttributeClass ?? InvalidAttributeClass());
-    }
-
-    private static bool IsDescriptionAttribute(INamedTypeSymbol symbol)
-    {
-        return MatchesType(type: DescriptionType, symbol: symbol);
+        return MatchesType(
+            type: DescriptionType,
+            symbol: attributeData.AttributeClass ?? throw new InvalidOperationException("AttributeClass is null")
+        );
     }
 
     private static bool MatchesType(Type type, INamedTypeSymbol symbol)
