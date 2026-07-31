@@ -11,6 +11,7 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 ## [Unreleased]
 ### Security
 ### Added
+- Add Credfeto.SourceGeneration.Helpers library: shared Roslyn source-generator building blocks (code emission, diagnostic rule helpers, generic Roslyn extensions) for reuse across Credfeto source generators.
 ### Fixed
 ### Changed
 ### Deprecated
