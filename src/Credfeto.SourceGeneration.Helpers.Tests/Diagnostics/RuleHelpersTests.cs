@@ -8,15 +8,20 @@ namespace Credfeto.SourceGeneration.Helpers.Tests.Diagnostics;
 
 public sealed class RuleHelpersTests : TestBase
 {
-    [Fact]
-    public void CreateRuleReturnsDescriptorWithCorrectId()
+    private static DiagnosticDescriptor CreateTestRule()
     {
-        DiagnosticDescriptor rule = RuleHelpers.CreateRule(
+        return RuleHelpers.CreateRule(
             code: "TEST001",
             category: "TestCategory",
             title: "Test Title",
             message: "Test Message"
         );
+    }
+
+    [Fact]
+    public void CreateRuleReturnsDescriptorWithCorrectId()
+    {
+        DiagnosticDescriptor rule = CreateTestRule();
 
         Assert.Equal(expected: "TEST001", actual: rule.Id);
     }
@@ -37,12 +42,7 @@ public sealed class RuleHelpersTests : TestBase
     [Fact]
     public void CreateRuleReturnsDescriptorWithErrorSeverity()
     {
-        DiagnosticDescriptor rule = RuleHelpers.CreateRule(
-            code: "TEST001",
-            category: "TestCategory",
-            title: "Test Title",
-            message: "Test Message"
-        );
+        DiagnosticDescriptor rule = CreateTestRule();
 
         Assert.Equal(expected: DiagnosticSeverity.Error, actual: rule.DefaultSeverity);
     }
@@ -50,12 +50,7 @@ public sealed class RuleHelpersTests : TestBase
     [Fact]
     public void CreateRuleReturnsDescriptorThatIsEnabledByDefault()
     {
-        DiagnosticDescriptor rule = RuleHelpers.CreateRule(
-            code: "TEST001",
-            category: "TestCategory",
-            title: "Test Title",
-            message: "Test Message"
-        );
+        DiagnosticDescriptor rule = CreateTestRule();
 
         Assert.True(rule.IsEnabledByDefault, "Rule should be enabled by default");
     }

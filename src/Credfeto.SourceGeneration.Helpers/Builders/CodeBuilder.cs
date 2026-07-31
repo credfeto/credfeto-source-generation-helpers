@@ -10,8 +10,10 @@ public sealed class CodeBuilder
 
     private int _indent;
 
+    private SourceText? CachedText { get; set; }
+
     public SourceText Text =>
-        SourceText.From(
+        this.CachedText ??= SourceText.From(
             this._stringBuilder.ToString(),
             encoding: Encoding.UTF8,
             checksumAlgorithm: SourceHashAlgorithm.Sha256
@@ -34,6 +36,7 @@ public sealed class CodeBuilder
     public CodeBuilder AppendBlankLine()
     {
         this._stringBuilder.AppendLine();
+        this.CachedText = null;
 
         return this;
     }
@@ -50,7 +53,8 @@ public sealed class CodeBuilder
             return this.AppendBlankLine();
         }
 
-        this._stringBuilder.Append(this.IndentCharacters()).AppendLine(text);
+        this._stringBuilder.Append(value: ' ', repeatCount: 4 * this._indent).AppendLine(text);
+        this.CachedText = null;
 
         return this;
     }
@@ -65,13 +69,6 @@ public sealed class CodeBuilder
         this.AppendLine(text);
 
         return new Indent(this, start: start, end: end);
-    }
-
-    private string IndentCharacters()
-    {
-        int indentCharacters = 4 * this._indent;
-
-        return string.Empty.PadLeft(indentCharacters);
     }
 
     private sealed class Indent : IDisposable

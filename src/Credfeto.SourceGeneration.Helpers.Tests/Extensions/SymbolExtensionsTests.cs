@@ -54,9 +54,7 @@ public sealed class SymbolExtensionsTests : TestBase
             [Obsolete]
             public enum MyEnum { A }
             """;
-        Microsoft.CodeAnalysis.CSharp.CSharpCompilation compilation = CompilationHelpers.CreateCompilation(source);
-        INamedTypeSymbol? type = compilation.GetTypeByMetadataName("MyEnum");
-        AttributeData attr = (type ?? throw new InvalidOperationException("Type not found")).GetAttributes().First();
+        AttributeData attr = GetSymbol(source, "MyEnum").GetAttributes().First();
 
         Assert.True(attr.IsObsoleteAttribute(), "AttributeData for ObsoleteAttribute should be identified as obsolete");
     }
@@ -70,9 +68,7 @@ public sealed class SymbolExtensionsTests : TestBase
             [Description("desc")]
             public enum MyEnum { A }
             """;
-        Microsoft.CodeAnalysis.CSharp.CSharpCompilation compilation = CompilationHelpers.CreateCompilation(source);
-        INamedTypeSymbol? type = compilation.GetTypeByMetadataName("MyEnum");
-        AttributeData attr = (type ?? throw new InvalidOperationException("Type not found")).GetAttributes().First();
+        AttributeData attr = GetSymbol(source, "MyEnum").GetAttributes().First();
 
         Assert.False(
             attr.IsObsoleteAttribute(),

@@ -7,6 +7,6 @@ public static class SupportedDiagnosticsList
 {
     public static ImmutableArray<DiagnosticDescriptor> Build(DiagnosticDescriptor rule)
     {
-        return ImmutableArray<DiagnosticDescriptor>.Empty.Add(item: rule);
+        return [rule];
     }
 }
