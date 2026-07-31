@@ -35,7 +35,7 @@ public sealed class CodeBuilder
 
     public CodeBuilder AppendBlankLine()
     {
-        this._stringBuilder.AppendLine();
+        _ = this._stringBuilder.AppendLine();
         this.CachedText = null;
 
         return this;
@@ -53,7 +53,7 @@ public sealed class CodeBuilder
             return this.AppendBlankLine();
         }
 
-        this._stringBuilder.Append(value: ' ', repeatCount: 4 * this._indent).AppendLine(text);
+        _ = this._stringBuilder.Append(value: ' ', repeatCount: 4 * this._indent).AppendLine(text);
         this.CachedText = null;
 
         return this;
@@ -66,7 +66,7 @@ public sealed class CodeBuilder
 
     public IDisposable StartBlock(string text, string start, string end)
     {
-        this.AppendLine(text);
+        _ = this.AppendLine(text);
 
         return new Indent(this, start: start, end: end);
     }
@@ -81,14 +81,14 @@ public sealed class CodeBuilder
             this._builder = builder;
             this._end = end;
 
-            this._builder.AppendLine(start);
+            _ = this._builder.AppendLine(start);
             ++this._builder._indent;
         }
 
         public void Dispose()
         {
             --this._builder._indent;
-            this._builder.AppendLine(this._end);
+            _ = this._builder.AppendLine(this._end);
         }
     }
 }
