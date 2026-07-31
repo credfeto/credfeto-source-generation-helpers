@@ -5,8 +5,8 @@ namespace Credfeto.SourceGeneration.Helpers.Diagnostics;
 
 public static class SupportedDiagnosticsList
 {
-    public static ImmutableArray<DiagnosticDescriptor> Build(DiagnosticDescriptor rule)
+    public static ImmutableArray<DiagnosticDescriptor> Build(params DiagnosticDescriptor[] rules)
     {
-        return [rule];
+        return [.. rules];
     }
 }
