@@ -19,7 +19,7 @@ public sealed class LiteralString : LocalizableString
 
     protected override int GetHash()
     {
-        return StringComparer.Ordinal.GetHashCode(this._value);
+        return StringComparer.OrdinalIgnoreCase.GetHashCode(this._value);
     }
 
     protected override bool AreEqual(object? other)

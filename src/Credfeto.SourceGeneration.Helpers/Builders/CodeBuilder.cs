@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 
 namespace Credfeto.SourceGeneration.Helpers.Builders;
@@ -43,7 +44,9 @@ public sealed class CodeBuilder
 
     public CodeBuilder AppendGeneratedCodeAttribute(string tool, string version)
     {
-        return this.AppendLine($"[GeneratedCode(tool: \"{tool}\", version: \"{version}\")]");
+        return this.AppendLine(
+            $"[GeneratedCode(tool: {SymbolDisplay.FormatLiteral(tool, quote: true)}, version: {SymbolDisplay.FormatLiteral(version, quote: true)})]"
+        );
     }
 
     public CodeBuilder AppendLine(string text)
@@ -75,6 +78,7 @@ public sealed class CodeBuilder
     {
         private readonly CodeBuilder _builder;
         private readonly string _end;
+        private bool _disposed;
 
         public Indent(CodeBuilder builder, string start, string end)
         {
@@ -87,6 +91,13 @@ public sealed class CodeBuilder
 
         public void Dispose()
         {
+            if (this._disposed)
+            {
+                return;
+            }
+
+            this._disposed = true;
+
             --this._builder._indent;
             _ = this._builder.AppendLine(this._end);
         }

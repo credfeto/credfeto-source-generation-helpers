@@ -1,13 +1,13 @@
-# cs-template
+# Credfeto.SourceGeneration.Helpers
 
-C# Template
+Shared Roslyn source-generator building blocks (code emission, diagnostic rule helpers, generic Roslyn extensions) for reuse across Credfeto source generators.
 
 ## Build Status
 
-| Branch  | Status                                                                                                                                                                                                                                |
-|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| main    | [![Build: Pre-Release](https://github.com/credfeto/cs-template/actions/workflows/build-and-publish-pre-release.yml/badge.svg)](https://github.com/credfeto/cs-template/actions/workflows/build-and-publish-pre-release.yml)           |
-| release | [![Build: Release](https://github.com/credfeto/cs-template/actions/workflows/build-and-publish-release.yml/badge.svg)](https://github.com/credfeto/cs-template/actions/workflows/build-and-publish-release.yml)                       |
+| Branch  | Status                                                                                                                                                                                                                                                                    |
+|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| main    | [![Build: Pre-Release](https://github.com/credfeto/credfeto-source-generation-helpers/actions/workflows/build-and-publish-pre-release.yml/badge.svg)](https://github.com/credfeto/credfeto-source-generation-helpers/actions/workflows/build-and-publish-pre-release.yml) |
+| release | [![Build: Release](https://github.com/credfeto/credfeto-source-generation-helpers/actions/workflows/build-and-publish-release.yml/badge.svg)](https://github.com/credfeto/credfeto-source-generation-helpers/actions/workflows/build-and-publish-release.yml)             |
 
 ## Changelog
 
