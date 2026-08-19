@@ -12,6 +12,10 @@
   - any: ['CHANGELOG.md']
 "Config Change":
   - any: ['src/**/*.json', '!src/global.json']
+"credfeto-sourcegeneration-helpers":
+  - any: ['src/Credfeto.SourceGeneration.Helpers/**/*']
+"credfeto-sourcegeneration-helpers-tests":
+  - any: ['src/Credfeto.SourceGeneration.Helpers.Tests/**/*']
 "dotnet":
   - any: ['src/**/*.csproj']
 "Editorconfig":
