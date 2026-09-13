@@ -14,6 +14,7 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 ### Fixed
 ### Changed
 - SDK - Updated DotNet SDK to 10.0.401
+- Dependencies - Updated CSharpIsNullAnalyzer to 0.2.19
 ### Deprecated
 ### Removed
 ### Deployment Changes
