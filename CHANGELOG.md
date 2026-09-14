@@ -16,7 +16,6 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 ### Changed
 - SDK - Updated DotNet SDK to 10.0.401
 - Dependencies - Updated CSharpIsNullAnalyzer to 0.2.19
-- Dependencies - Updated Meziantou.Analyzer to 3.0.253
 - Dependencies - Updated Microsoft.CodeAnalysis.Analyzers to 5.9.0
 - Dependencies - Updated Nullable.Extended.Analyzer to 1.16.6891
 - Dependencies - Updated Roslynator.Analyzers to 5.0.0
@@ -28,6 +27,7 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 - Dependencies - Updated Microsoft.CodeAnalysis.CSharp to 5.9.0
 - Dependencies - Updated FunFair.Test.Common to 6.4.6.2749
 - Dependencies - Updated FunFair.CodeAnalysis to 7.2.13.2323
+- Dependencies - Updated Meziantou.Analyzer to 3.0.257
 ### Deprecated
 ### Removed
 ### Deployment Changes
