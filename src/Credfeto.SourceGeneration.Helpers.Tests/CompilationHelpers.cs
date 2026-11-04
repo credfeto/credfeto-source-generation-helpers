@@ -33,7 +33,7 @@ internal static class CompilationHelpers
 
     private static IReadOnlyList<MetadataReference> BuildBaseReferences()
     {
-        HashSet<string> addedPaths = new(StringComparer.OrdinalIgnoreCase);
+        HashSet<string> addedPaths = [with(StringComparer.OrdinalIgnoreCase)];
         List<MetadataReference> references = [];
 
         AddReference(references, addedPaths, typeof(object));
