@@ -8,7 +8,6 @@
     <DebuggerSupport>true</DebuggerSupport>
     <Description>Shared Roslyn source-generator building blocks (code emission, diagnostics, generic Roslyn extensions) for Credfeto source generators.</Description>
     <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
-    <EnableMicrosoftExtensionsConfigurationBinderSourceGenerator>true</EnableMicrosoftExtensionsConfigurationBinderSourceGenerator>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnablePackageValidation>true</EnablePackageValidation>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
@@ -49,6 +48,7 @@
     <WarningsAsErrors />
   </PropertyGroup>
   <PropertyGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
+    <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
