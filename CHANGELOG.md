@@ -19,6 +19,7 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 - Tests - Target .NET 11 and enable runtime-async (#28)
 - SDK - Updated DotNet SDK to 11.0.100
 - Dependencies - Updated FunFair.CodeAnalysis to 7.2.25.2636
+- Dependencies - Updated Meziantou.Analyzer to 3.0.339
 ### Deprecated
 ### Removed
 ### Deployment Changes
