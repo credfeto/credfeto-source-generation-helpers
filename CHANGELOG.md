@@ -18,6 +18,7 @@ Please ADD ALL Changes to the UNRELEASED SECTION and not a specific release
 - Dependencies - Updated Nullable.Extended.Analyzer to 1.19.0
 - Tests - Target .NET 11 and enable runtime-async (#28)
 - SDK - Updated DotNet SDK to 11.0.100
+- Dependencies - Updated FunFair.CodeAnalysis to 7.2.25.2636
 ### Deprecated
 ### Removed
 ### Deployment Changes
